@@ -28,8 +28,30 @@
 
   <body>
 
+
     <div class="login">
       <a class="btn" href="/auth/google">Gmail Login</a>
+
+    <div class="container-fluid">
+            <form class="" action="/login" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <!-- <label>First Name</label>
+                    <input class="form-control" type="text" name="firstName" placeholder="First Name">
+                    <label >Last Name</label>
+                    <input class="form-control" type="text" name="lastName" placeholder="Last Name"> -->
+                    <label>Email</label>
+                    <input class="form-control" name="login_email" placeholder="Email"></input>
+                    <label>Password</label>
+                    <input class="form-control" type="password" name ="password" placeholder="Password">
+                    <!-- <label>Email</label>
+                    <input class="form-control" type="text" name="composerEmail"> -->
+                </div>
+                <button class="btn btn-primary" type="submit" name="signup_btn">Log in</button>
+            </form>
+            <form action="/google" method="get">
+              <button class="btn btn-primary" type="submit" name="google_signup">Google</button>
+            </form>
+
     </div>
     
         

@@ -41,7 +41,7 @@ exports.postSignup = (req,res,next) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
   const password = req.body.password; 
-  
+  console.log(email + " " + firstName + " " + lastName + " " + password);
   User.find({Email:email},function(err,obj){
     if(!obj){
       const user = new User({
@@ -50,6 +50,7 @@ exports.postSignup = (req,res,next) => {
         Email: email,
         Password: password
       });
+      console.log(email + " " + firstName + " " + lastName + " " + password);
       user.save(function(err){
         console.log(email + " " + firstName + " " + lastName + " " + password);
         if (!err){
@@ -143,3 +144,7 @@ exports.deletePost = (req,res,next)=> {
 exports.getGoogle = passport.authenticate('google',{
   scope: ['profile']
 });
+
+exports.getRedirect = passport.authenticate('google'),(req,res,next) => {
+  res.send("<h1>Redirect Route</h1>");
+};
