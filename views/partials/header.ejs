@@ -20,14 +20,27 @@
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
+             <% if(user) { %> 
             <a class="nav-link" href="/compose">Compose</a>
+            <% } %> 
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="/signup">Sign Up</a>
-          </li>
+          </li> -->
           <li class="nav-item">
+            <% if(user) {  %> 
+            <a class="nav-link" href="/logout">Logout</a>
+            <% } else { %> 
             <a class="nav-link" href="/login">Log in</a>
+            <% } %> 
           </li>
+
+          <% if(user) { %> 
+            <li>
+              <p>Hello <%= user.userName %> </p>
+            </li>
+           <% } %>  
+
         </ul>
       </div>
     </div>

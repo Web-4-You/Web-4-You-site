@@ -9,30 +9,35 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   
+  <style>
+    .btn {
+      display: block;
+      background: white;
+      color: #444;
+      width: 190px;
+      border-radius: 5px;
+      border: thin solid #888;  
+      box-shadow: 1px 1px 1px grey;
+      white-space: nowrap;
+      margin: 40px auto;
+      
+    }
+  </style>
+  </head>
+
 
   <body>
-    <div class="container-fluid">
-            <form class="" action="/login" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <!-- <label>First Name</label>
-                    <input class="form-control" type="text" name="firstName" placeholder="First Name">
-                    <label >Last Name</label>
-                    <input class="form-control" type="text" name="lastName" placeholder="Last Name"> -->
-                    <label>Email</label>
-                    <input class="form-control" name="login_email" placeholder="Email"></input>
-                    <label>Password</label>
-                    <input class="form-control" type="password" name ="password" placeholder="Password">
-                    <!-- <label>Email</label>
-                    <input class="form-control" type="text" name="composerEmail"> -->
-                </div>
-                <button class="btn btn-primary" type="submit" name="signup_btn">Log in</button>
-            </form>
+
+    <div class="login">
+      <a class="btn" href="/auth/google">Gmail Login</a>
     </div>
-<div class="footer-padding"></div>
+    
+        
+<!-- <div class="footer-padding"></div>
   <div class="footer">
     <p>Web For You</p>
   </div>
-</div>
+</div> -->
 <script src="/js/index.js" defer></script>
 </body>
 </html>

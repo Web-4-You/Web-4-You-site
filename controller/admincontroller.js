@@ -19,9 +19,12 @@ exports.getHome = (req,res,next) => {
     Post.find({}, function(err, posts){
         console.log(posts);
         res.render("home", {
-          posts: posts
+          posts: posts,
+          user : req.user
           });
       });
+
+      console.log('user',req.user)
 }
 
 
@@ -70,7 +73,9 @@ exports.postLogin = (req,res,next) => {
 }
 
 exports.getCompose = (req,res,next)=> {
-  res.render("compose");
+  res.render("compose",{
+    user : req.user
+  });
 }
 
 exports.postCompose = (req,res,next) => {
@@ -104,7 +109,9 @@ exports.postCompose = (req,res,next) => {
 }
 
 exports.getExists = (req,res,next)=> {
-    res.render("exists"); 
+    res.render("exists",{
+      user : req.user
+    }); 
 }
 
 
@@ -132,6 +139,7 @@ exports.deletePost = (req,res,next)=> {
         console.log(err);
       })
 }
+
 exports.getGoogle = passport.authenticate('google',{
   scope: ['profile']
 });
